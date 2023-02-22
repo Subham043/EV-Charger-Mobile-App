@@ -6,8 +6,8 @@
 			"address": "connaught place, delhi",
 			"distance": "2102",
 			"distance_metrics": "metres",
-			"latitude": "22.4532122",
-			"longitude": "77.4545322",
+			"latitude": "22.4632122",
+			"longitude": "77.4545122",
 			"connector_types": ["lvl1dc-2", "lvl2dc-1", "normalac-1"]
 		},
 		{
@@ -16,8 +16,8 @@
 			"address": "connaught place, delhi",
 			"distance": "2102",
 			"distance_metrics": "metres",
-			"latitude": "22.4532122",
-			"longitude": "77.4545322",
+			"latitude": "22.4532222",
+			"longitude": "77.4545222",
 			"connector_types": ["lvl1dc-2", "lvl2dc-1", "normalac-1"]
 		},
 		{
@@ -26,8 +26,8 @@
 			"address": "connaught place, delhi",
 			"distance": "2102",
 			"distance_metrics": "metres",
-			"latitude": "22.4532122",
-			"longitude": "77.4545322",
+			"latitude": "22.4532322",
+			"longitude": "77.4645322",
 			"connector_types": ["lvl1dc-2", "lvl2dc-1", "normalac-1"]
 		}
 	]
