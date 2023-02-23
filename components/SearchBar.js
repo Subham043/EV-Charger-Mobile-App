@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: THEME_PRIMARY_COLOR,
         width: 15,
         height: 15,
-        borderRadius: "50%",
+        borderRadius: 7.5,
     },
     search_input: {
         color: 'white',

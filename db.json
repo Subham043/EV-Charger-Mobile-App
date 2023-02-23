@@ -6,8 +6,8 @@
 			"address": "connaught place, delhi",
 			"distance": "2102",
 			"distance_metrics": "metres",
-			"latitude": "22.4632122",
-			"longitude": "77.4545122",
+			"latitude": "12.8822556",
+			"longitude": "77.6152",
 			"connector_types": ["lvl1dc-2", "lvl2dc-1", "normalac-1"]
 		},
 		{
