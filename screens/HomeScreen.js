@@ -3,13 +3,14 @@ import { StyleSheet, View, Dimensions, TouchableOpacity, FlatList, Text, Linking
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import SearchBar from '../components/SearchBar';
 import Entypo from '@expo/vector-icons/Entypo';
-import { THEME_PRIMARY_COLOR, THEME_SECONDARY_COLOR, THEME_DANGER_COLOR } from '../constant';
+import { THEME_PRIMARY_COLOR, THEME_SECONDARY_COLOR, THEME_DANGER_COLOR, FloatingActions } from '../constant';
 import Card from '../components/Card';
 import {chargers} from '../db.json'
 import * as Location from 'expo-location';
 import { useEffect, useRef, useState } from 'react';
 import Modal from "react-native-modal";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { FloatingAction } from "react-native-floating-action";
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -69,8 +70,14 @@ const HomeScreen = () => {
           result: 'file'   // result types: 'file', 'base64' (default: 'file')
         });
         snapshot.then((uri) => {
-        //   this.setState({ mapSnapshot: uri });
-        console.log(uri);
+            const formData = new FormData;
+            formData.append('file', uri);
+            fetch('http://3.7.20.173:8503/api/upload/', formData
+            ).then((data) => {
+                console.log(data); // JSON data parsed by `data.json()` call
+            }).catch((err) => {
+                console.log(err);
+            });
         });
     }
     
@@ -129,6 +136,15 @@ const HomeScreen = () => {
                     </>}
                 </View>
             </Modal>
+            <FloatingAction
+                actions={FloatingActions}
+                color={THEME_PRIMARY_COLOR}
+                onPressItem={name => {
+                    if(name==='bt_screenshot'){
+                        takeSnapshot()
+                    }
+                }}
+            />
         </View>
     )
 }
@@ -152,7 +168,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         position: 'absolute',
         top: 50,
-        zIndex:20
+        zIndex:1
     },
     menu: {
         marginRight:5,
@@ -171,7 +187,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
         position: 'absolute',
         bottom: 30,
-        zIndex:20,
+        zIndex:0,
     },
     marker_view: {
         width: 30, 
